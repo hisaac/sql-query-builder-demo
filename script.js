@@ -1,3 +1,7 @@
+$(document).ready(function() {
+  
+});
+
 // Constructs SQL query based off of user defined search paramaters ----------//
 function queryBuilder(object) {
   var index = 0;
@@ -6,19 +10,20 @@ function queryBuilder(object) {
   if (object.generic_search) {
     index++;
     query +=
-      '(first_name ILIKE $' + index +
-      ' OR last_name ILIKE $' + index +
-      ' OR blurb ILIKE $' + index +
-      ' OR bio ILIKE $' + index +
-      ' OR company ILIKE $' + index +
-      ' OR job_title ILIKE $' + index +
-      ' OR race ILIKE $' + index +
-      ' OR gender ILIKE $' + index +
-      ' OR orientation ILIKE $' + index +
-      ' OR school ILIKE $' + index +
-      ' OR degree ILIKE $' + index +
-      ' OR major ILIKE $' + index +
-      ' OR languages ILIKE $' + index + ')';
+      '(first_name ILIKE $'       + index +
+      ' OR last_name ILIKE $'     + index +
+      ' OR blurb ILIKE $'         + index +
+      ' OR bio ILIKE $'           + index +
+      ' OR company ILIKE $'       + index +
+      ' OR job_title ILIKE $'     + index +
+      ' OR race ILIKE $'          + index +
+      ' OR gender ILIKE $'        + index +
+      ' OR orientation ILIKE $'   + index +
+      ' OR school ILIKE $'        + index +
+      ' OR degree ILIKE $'        + index +
+      ' OR major ILIKE $'         + index +
+      ' OR languages ILIKE $'     + index +
+      ')';
   }
 
   for (var property in object) {
