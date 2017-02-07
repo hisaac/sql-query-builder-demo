@@ -1,5 +1,12 @@
 $(document).ready(function() {
   
+  let query;
+
+  $("submit").click(function(event){
+    event.preventDefault();
+    $('#outputCode').html()
+  });
+
 });
 
 // Constructs SQL query based off of user defined search paramaters ----------//
