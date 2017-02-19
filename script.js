@@ -1,36 +1,33 @@
-$(document).ready(function() {
-  
-  let query;
+var input, output;
 
-  $("submit").click(function(event){
-    event.preventDefault();
-    $('#outputCode').html()
-  });
-
-});
+function process() {
+  event.preventDefault();
+  // input = (document.getElementById('input').value);
+  // document.getElementById('output').innerHTML = 'fartss';
+}
 
 // Constructs SQL query based off of user defined search paramaters ----------//
 function queryBuilder(object) {
   var index = 0;
   var query = 'SELECT * FROM mentors WHERE ';
 
+  // If there is anything in the generic search field, this will add that to the search
   if (object.generic_search) {
     index++;
     query +=
-      '(first_name ILIKE $'       + index +
-      ' OR last_name ILIKE $'     + index +
-      ' OR blurb ILIKE $'         + index +
-      ' OR bio ILIKE $'           + index +
-      ' OR company ILIKE $'       + index +
-      ' OR job_title ILIKE $'     + index +
-      ' OR race ILIKE $'          + index +
-      ' OR gender ILIKE $'        + index +
-      ' OR orientation ILIKE $'   + index +
-      ' OR school ILIKE $'        + index +
-      ' OR degree ILIKE $'        + index +
-      ' OR major ILIKE $'         + index +
-      ' OR languages ILIKE $'     + index +
-      ')';
+      '(first_name ILIKE $' + index +
+      ' OR last_name ILIKE $' + index +
+      ' OR blurb ILIKE $' + index +
+      ' OR bio ILIKE $' + index +
+      ' OR company ILIKE $' + index +
+      ' OR job_title ILIKE $' + index +
+      ' OR race ILIKE $' + index +
+      ' OR gender ILIKE $' + index +
+      ' OR orientation ILIKE $' + index +
+      ' OR school ILIKE $' + index +
+      ' OR degree ILIKE $' + index +
+      ' OR major ILIKE $' + index +
+      ' OR languages ILIKE $' + index + ')';
   }
 
   for (var property in object) {
@@ -82,9 +79,9 @@ function faqEditQueryBuilder(faqArray, userId) {
   }
 
   queryString +=
-    'UPDATE faq ' +
-    'SET question = CASE id' + questionString + ' END, ' +
-    'answer = CASE id' + answerString + ' END';
+  'UPDATE faq ' +
+  'SET question = CASE id' + questionString + ' END, ' +
+  'answer = CASE id' + answerString + ' END';
 
   for (index = 0; index < faqArray.length; index++) {
     propertyArray.push(faqArray[index].faq_id, faqArray[index].question);
@@ -100,4 +97,3 @@ function faqEditQueryBuilder(faqArray, userId) {
   };
 }
 //----------------------------------------------------------------------------//
-

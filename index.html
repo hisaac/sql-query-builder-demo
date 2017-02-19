@@ -1,34 +1,138 @@
 <!DOCTYPE html>
+<!--
+  Copyright 2017 Isaac Halvorson
+  Contact me at: hello@hisaac.net
+-->
 <html>
 
 <head>
-	<meta charset="utf-8" />
+  <title>codepen.io.io</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1" />
-  <meta name="copyright" content="$copy; 2016 Isaac Halvorson" />
-	<title>SQL Query Builder Demo</title>
-  <link rel="stylesheet" href="main.css" />
-  <script src="./jquery-3.1.1.js" type="text/javascript"></script>
-  <script src="./script.js" type="text/javascript"></script>
+  <meta name="copyright" content="$copy; 2017 Isaac Halvorson" />
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-  	<h1 class="center">SQL Query Builder Demo</h1>
+  <header class="text-center">
+    <h1>codepen.io.io</h1>
   </header>
+  <main>
+    <p id="description" class="block-center">Codepen.io.io is a simple template for demonstrating JavaScript function Input/Output on <a href="http://codepen.io">Codepen</a> I've tried to make it as easy to use and modular as possible, but please feel free to contribute on GitHub if you've got some great ideas.</p>
 
-	<main class="center">
-		<form>
-			<input type="text" id="query" autofocus="true" />
-			<input type="submit" />
-		</form>
+    <!--––––––––––––––––––––––––––––––––– Input –––––––––––––––––––––––––––––––––-->
+    <h3 class="text-center">Input</h3>
 
-		<p>Output:</p>
+    <form>
+      <div class="block-center">
 
-		<code id="outputCode"></code>
+        <!-- Generic search box -->
+        <div class="u-full-width">
+          <label for="exampleEmailInput">Text Input</label>
+          <input type="text" class="u-full-width" id="textInput">
+        </div>
 
-	</main>
+        <!-- Dropdown selectors -->
+        <div class="u-full-width">
+          <div class="six columns">
+            <label for="state">State</label>
+            <select class="u-full-width" id="state">
+              <option value=""></option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="six columns">
+            <label for="gender">Gender</label>
+            <select class="u-full-width" id="gender">
+              <option value=""></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
 
+        <!-- Text selections -->
+        <div class="u-full-width">
+          <div class="six columns">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" class="u-full-width">
+          </div>
+          <div class="six columns">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="u-full-width">
+          </div>
+        </div>
+
+      </div>
+      
+      <div class="block-center">
+        <button class="button-primary" onclick='process()'>Process!</button>
+      </div>
+    </form>
+
+    <!--–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+    
+    <!--–––––––––––––––––––––––––––––––– Output –––––––––––––––––––––––––––––––––-->
+    <h3 class="text-center">Output</h3>
+    <div id="outputContainer" class="block-center">
+      <textarea class="u-full-width" placeholder="Output appears here" id="output"></textarea>
+    </div>
+    <!--–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––-->
+
+  </main>
 </body>
 
 </html>
-
